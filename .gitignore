@@ -1,0 +1,14 @@
+# Configuration with real credentials — NEVER commit
+cfg.yaml
+
+# Python cache
+*.pyc
+__pycache__/
+
+# AppDaemon runtime
+*.log
+
+# Editor
+.vscode/
+.idea/
+*.swp

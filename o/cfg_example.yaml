@@ -1,0 +1,35 @@
+# ══════════════════════════════════════════════════════════════
+# Filament Dryer Controller – Configuration
+# Place this file in the same folder as filament_dryer.py
+# Copy to cfg.yaml and fill in your values.
+# cfg.yaml is gitignored — never commit real credentials.
+# ══════════════════════════════════════════════════════════════
+
+db:
+  host:     "192.168.1.100"        # MariaDB host IP or hostname
+  port:     3306
+  user:     "your_db_user"
+  password: "your_db_password"
+  database: "your_db_name"
+
+pid:
+  kp: 15.0   # Proportional gain — reduce if fan oscillates
+  ki: 0.3    # Integral gain    — keep small
+  kd: 2.0    # Derivative gain  — set to 0 initially when tuning
+
+entities:
+  # ── Sensors ───────────────────────────────────────
+  temp:       "sensor.your_chamber_temp"      # Chamber temperature (°C)
+  humidity:   "sensor.your_chamber_humidity"  # Chamber humidity (%) — logged only
+
+  # ── Switches ──────────────────────────────────────
+  heater:     "switch.your_heater"            # Heater element (PTC, heat mat, etc.)
+
+  # ── Fan ───────────────────────────────────────────
+  fan:        "fan.your_circulation_fan"      # Variable-speed fan
+
+  # ── input_number helpers ──────────────────────────
+  target_temp:        "input_number.dryer_target_temp"
+  fan_min:            "input_number.dryer_fan_min"
+  fan_max:            "input_number.dryer_fan_max"
+  heater_hysteresis:  "input_number.dryer_heater_hysteresis"
