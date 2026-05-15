@@ -36,7 +36,7 @@ documented as enhancement.
 
 ### Bug 1 — Phantom temperature reading via `safe_float` fallback
 
-**Severity:** 🔴 High (safety-critical, potentially silent)
+**Severity:**  High (safety-critical, potentially silent)
 
 **Location:** `regulate_heater()`, v1.0 lines 380–386
 
